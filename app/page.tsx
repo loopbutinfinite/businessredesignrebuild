@@ -1,65 +1,344 @@
+// app/page.tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image";
+
+const specials = [
+  {
+    title: "Spicy Tuna Rolls",
+    description: "Spicy tuna, avocado, cucumber roll with spicy mayo",
+  },
+  {
+    title: "Fresh Sushi Assortment",
+    description: "Nigiri and assorted rolls with fresh fish selection",
+  },
+  {
+    title: "Crispy Shrimp Tempura",
+    description: "Lightly battered, crispy fried shrimp with dipping sauce",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-[#f6f0f7] text-gray-800">
+      {/* HERO */}
+      <section className="relative w-full h-[60vh] md:h-[70vh]">
+        <div className="absolute inset-0 bg-black/30 z-10" />
+        <div className="absolute inset-0">
+          {/* Replace with your own image */}
+          <img src="/assets/Hero-Image.png" className="w-full h-full bg-gray-300" />
+        </div>
+
+        <div className="relative z-20 max-w-6xl mx-auto px-4 h-full flex items-center justify-center md:justify-normal">
+          <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-6 md:p-10 max-w-md">
+            <h1 className="text-2xl md:text-4xl font-bold mb-2">
+              Welcome to Sakura
+            </h1>
+            <p className="text-gray-600 mb-4">
+              Stockton's favorite Asian grocery store.
+            </p>
+            <button className="bg-purple-500 hover:bg-purple-600 text-white px-5 py-2 rounded-lg transition">
+              Browse Products
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* DAILY SPECIALS */}
+      <section className="py-12 max-w-6xl h-137.5 mx-auto px-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
+          Daily Specials
+        </h2>
+
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-[12rem] sm:max-w-xs md:max-w-sm"
+        >
+          <CarouselContent>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <span className="text-3xl font-semibold">{index + 1}</span>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+
+      {/* PRODUCTS SECTION */}
+      <section className="py-12 bg-white">
+        <div>
+          <h3 className="text-5xl text-center font-bold">Our Products</h3>
+          <h5 className="text-3xl py-8 text-center"><span className="font-bold">Stockton's neighborhood hub</span> for authentic Asian flavors and essentials</h5>
+        </div>
+        <div className="grid grid-cols-2 px-30">
+          <div>
+            <p className="text-3xl py-7 px-10"><span className="font-bold">Sakura Asian Market</span> is a family-owned of authentic Asian food, snacks, drinks, and cooking essentials. Since opening in Stockton, CA, we've been dedicated to bringing the tastes and ingredients of Japan to our local community. We are committed to friendly service, a welcoming atmosphere, and providing high, quality products that make our customers feel at home.</p>
+          </div>
+          <div>
+            <img className="h-100 w-200 bg-cover rounded-4xl mx-auto" src="/assets/products-kithchenware.jpg" alt="Sakura aisles" />
+          </div>
+        </div>
+      </section>
+      {/* About Us Section */}
+      <section className="w-full px-4 md:px-6 lg:px-12 bg-pink-200">
+        <header className="text-center mt-6 lg:mt-10">
+          <h1 className="lg:text-5xl text-3xl font-bold mb-3 underline pt-10">
+            About Us
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="font-normal text-xl lg:text-3xl">
+            <strong>
+              Stockton’s neighborhood hub for authentic Asian flavors, friendly faces, and community connection
+            </strong>
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+        </header>
+
+        {/* Our Story */}
+        <div className="grid md:grid-cols-2 gap-6 mt-6 lg:mt-8 items-center">
+          <div>
+            <h2 className="text-4xl font-semibold underline mb-2">
+              Our Story
+            </h2>
+            <p className="text-2xl">
+              Sakura Grocery Store was founded with a simple mission, to bring
+              the richness of Japanese and other Asian cuisines to our Central Valley community. Inspired by the beauty
+              and symbolism of the cherry blossom, sakura, our store represents renewal, tradition, and the joy of sharing.
+              Over time, we have grown into a trusted destination for everything from specialty snacks and fresh seafood
+              to pantry staples and everyday groceries.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <img
+              src="/assets/sakura-grocery-storefront.jpg"
+              alt="Sakura Grocery Storefront"
+              className="rounded-lg = h-auto"
             />
-            Deploy Now
+          </div>
+        </div>
+
+        {/* What We Offer */}
+        <div className="mt-8 lg:mt-10">
+          <h2 className="text-2xl font-semibold underline mb-4 text-center md:text-left">
+            What We Offer
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="bg-gray-100 rounded-xl p-4 h-full">
+              <Image
+                src="/assets/icon-sushi.png"
+                alt="sushi icon"
+                width={100}
+                height={100}
+                className="mx-auto mt-2"
+              />
+              <p className="text-center mt-2">
+                <strong>Variety</strong>
+              </p>
+              <ul className="mt-2 text-sm list-disc pl-4">
+                <li>
+                  <strong>Wide Selection of Authentic Ingredients:</strong> Whether you’re cooking sushi,
+                  ramen, or home-style Japanese dishes, you’ll find high-quality rice, noodles, sauces,
+                  seaweed, and more.
+                </li>
+                <li>
+                  <strong>Fresh Produce & Seafood:</strong> We source the freshest vegetables, fruits, and
+                  seafood so you can prepare the meals you love.
+                </li>
+              </ul>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-gray-100 rounded-xl p-4 h-full">
+              <Image
+                src="/assets/icon-bento.png"
+                alt="bento icon"
+                width={100}
+                height={100}
+                className="mx-auto mt-2"
+              />
+              <p className="text-center mt-2">
+                <strong>Ready-To-Eat</strong>
+              </p>
+              <ul className="mt-2 text-sm list-disc pl-4">
+                <li>
+                  <strong>Ready-to-Eat & Grab-and-Go:</strong> We know life gets busy, so we stock tasty
+                  musubis, onigiri, bentos.
+                </li>
+                <li>
+                  <strong>Grab-and-Go:</strong> Come in and grab a bento or sushi plate to enjoy on the
+                  run or while on your daily commute.
+                </li>
+              </ul>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-gray-100 rounded-xl p-4 h-full">
+              <Image
+                src="/assets/icon-snack.png"
+                alt="snack icon"
+                width={100}
+                height={100}
+                className="mx-auto mt-2"
+              />
+              <p className="text-center mt-2">
+                <strong>Snacks & Treats</strong>
+              </p>
+              <ul className="mt-2 text-sm list-disc pl-4">
+                <li>
+                  <strong>Snacks & Treats:</strong> From traditional Japanese wagashi and mochi to
+                  modern-day snack trends, there’s something delightful at every turn.
+                </li>
+                <li>
+                  <strong>Pan-Asian Products:</strong> While Japanese fare is our heart, our shelves also
+                  include flavors from across Asia - Chinese, Vietnamese, Korean, Filipino and more.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Vision */}
+        <div className="mt-10 space-y-6">
+          <div className="bg-gray-800 text-white rounded-xl p-6 text-center">
+            <h3 className="text-xl font-semibold underline mb-3">
+              Our Vision
+            </h3>
+            <p>
+              We envision Sakura Grocery Store as more than just a grocery store - but a bridge between communities,
+              a place where people of all backgrounds can come together through food. As we grow, we hope to continue
+              expanding our offerings, sharing new flavors, and creating memorable experiences for everyone who walks
+              through our doors.
+            </p>
+          </div>
+
+          <div className="bg-gray-200 rounded-xl p-6 text-center">
+            <h3 className="text-xl font-semibold underline mb-3">
+              Our Commitment to Stockton
+            </h3>
+            <p>
+              We believe in giving back to the community that has welcomed us. That means more than stocking your favorite
+              foods. It means building genuine relationships with the community, whether it be through local events,
+              cooking demonstrations, or partnerships with neighborhood organizations and communities, we’re dedicated to
+              being a positive force in Stockton. As a part of the city’s rich Asian-American heritage, we deeply value the
+              cultural roots that unite us all.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Connect With Us */}
+      <div className="container-fluid">
+        <div className="row">
+          <header
+            className="text-center justify-content-center my-lg-5 my-md-4 titleText my-4 text-5xl"><u>Connect With Us</u>
+          </header>
+          <div className="grid grid-cols-3">
+            <article className="mx-auto  justify-content-center connectWithUsCards">
+              <div className="bg-purple-200 rounded-2xl p-2">
+                <h2 className="headerTitles mt-3 ms-3 text-3xl"><u>Contact Us</u></h2>
+                <div className=" mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-phone.png" alt="phone icon" />
+                  <p className="lato-regular  align-items-end">(209)477-3939</p>
+                </div>
+                <div className=" mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-mail.png" alt="email icon" />
+                  <p className="lato-regular  align-items-end">sakuragroceries@yahoo.com</p>
+                </div>
+                <div className=" mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-map-pin.png" alt="map pin icon" />
+                  <p className="lato-regular  align-items-end">4343 Pacific Ave #A4<br />Stockton, CA 95207</p>
+                </div>
+              </div>
+            </article>
+            <article className="mx-auto  justify-content-center connectWithUsCards">
+              <div className="bg-purple-200 rounded-2xl p-2">
+                <h2 className="text-3xl mt-3 ms-3"><u>Store Hours</u></h2>
+                <div className="d-flex mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-clock.png" alt="clock icon" />
+                  <p className="lato-regular ">Monday - Friday<br />10:00 AM - 7:00 PM</p>
+                </div>
+                <div className="d-flex mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-clock.png" alt="clock icon" />
+                  <p className="lato-regular">Saturday<br />9:00 AM - 6:00 PM</p>
+                </div>
+                <div className="d-flex mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-clock2.png" alt="clock icon" />
+                  <p className="lato-regular">Sunday<br />CLOSED</p>
+                </div>
+              </div>
+            </article>
+            <article className="mx-auto  justify-content-center connectWithUsCards">
+              <div className="bg-purple-200 rounded-2xl p-2">
+                <h2 className="text-3xl mt-3 ms-3"><u>Social Media</u></h2>
+                <div className="d-flex mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-facebook.png" alt="facebook icon" />
+                  <p className="d-flex align-items-end lato-regular">Like us on &nbsp; <span
+                    className="socialMediaCardTextColor"><a target="_blank" className="socialMediaCardTextColor"
+                      href="https://www.facebook.com/pages/SAKURA-Japanese-groceries-and-gifts/160632486211">Facebook</a></span>
+                  </p>
+                </div>
+                <div className="d-flex mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-instagram.png" alt="instagram icon" />
+                  <p className="d-flex align-items-end lato-regular">Follow us on &nbsp; <span
+                    className="socialMediaCardTextColor"><a target="_blank" className="socialMediaCardTextColor"
+                      href="https://www.instagram.com/sakuragroceries_stockton/?hl=en">Instagram</a></span>
+                  </p>
+                </div>
+                <div className="d-flex mt-3 ms-3 mb-3">
+                  <img className="me-2" src="./assets/icon-yelp.png" alt="yelp icon" />
+                  <p className="d-flex align-items-end lato-regular">Find us on &nbsp; <span
+                    className="socialMediaCardTextColor"><a target="_blank" className="socialMediaCardTextColor"
+                      href="https://www.yelp.com/biz/sakura-stockton">Yelp</a></span></p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <article className="row">
+          <div className="col-12 d-flex justify-content-center connectWithUsCards visitUsCardResizing mx-auto">
+            <div className="card cardBGColor visitUsCardResizing" />
+            <h2 className="text-center text-5xl justify-content-center my-3 contactUsCardsTitleText"><u>Visit Us</u>
+            </h2>
+            <img src="./assets/Sakura-Google-Map-Location.png"
+              className="mx-auto pt-10 googleMapPinIMG ms-lg-3 ms-md-2 mb-3 mapPinIMG"
+              alt="Sakura Google Map Location Pin" />
+          </div>
+        </article>
+      </div>
+
+      {/* Footer */}
+      < footer className="w-full bg-gray-900 text-white mt-10 px-4 md:px-6 lg:px-12 py-4 flex flex-col md:flex-row justify-between items-center" >
+        <p>Copyright © 2023 Sakura Groceries</p>
+
+        <div className="flex gap-3 mt-3 md:mt-0">
+          <a href="https://www.facebook.com/pages/SAKURA-Japanese-groceries-and-gifts/160632486211" target="_blank">
+            <img src="/assets/icon-facebook-footer.png" alt="facebook icon" className="h-8" />
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <a href="https://www.instagram.com/sakuragroceries_stockton/?hl=en" target="_blank">
+            <img src="/assets/icon-instagram-footer.png" alt="instagram icon" className="h-8" />
+          </a>
+          <a href="https://www.yelp.com/biz/sakura-stockton" target="_blank">
+            <img src="/assets/icon-yelp-footer.png" alt="yelp icon" className="h-8" />
           </a>
         </div>
-      </main>
-    </div>
+      </footer >
+    </main >
   );
 }
