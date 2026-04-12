@@ -21,20 +21,6 @@ export default function Home() {
   return (
     <main className="text-gray-800">
       {/* HERO */}
-      {/* <nav className="fixed top-0 w-full backgroundimg  px-4 z-50 shadow-sm">
-        <div className="container-fluid flex justify-between items-center">
-          <a href="#">
-            <img src="/assets/sakura-logo.png" alt="Sakura Logo" width={200} height={200} className="h-30 w-auto" />
-          </a>
-          <ul className="hidden lg:flex items-center space-x-5 text-[#9667e0] font-bold text-[16px] tracking-wider">
-            <a href="#homeSection" className=" hover:text-[#8a2be2] hover:underline transition-colors">HOME</a>
-            <a href="#dailySpecialsSection" className=" hover:text-[#8a2be2] hover:underline transition-colors">SPECIALS</a>
-            <a href="#productsSection" className=" hover:text-[#8a2be2] hover:underline transition-colors">PRODUCTS</a>
-            <a href="#aboutUsSection" className=" hover:text-[#8a2be2] hover:underline transition-colors">ABOUT</a>
-            <a href="#connectWithUsSection" className=" hover:text-[#8a2be2] hover:underline transition-colors">CONTACT</a>
-          </ul>
-        </div>
-      </nav> */}
       <Navbar fluid rounded className="backgroundimg">
         <NavbarBrand>
           <img src="/assets/sakura-logo.png" alt="Sakura Logo" width={200} height={200} className="h-30 w-auto" />
