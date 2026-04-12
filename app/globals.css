@@ -162,3 +162,27 @@
     @apply font-sans;
   }
 }
+.backgroundimg {
+  background-image: url("/assets/background.png");
+  background-size: cover;        /* fills entire section */
+  background-position: center;   /* keeps it centered */
+  background-repeat: no-repeat;  /* prevents tiling */
+}
+.backgroundcolor {
+  background: linear-gradient(
+    135deg,
+    #f8f5ff 0%,
+    #efe7fb 40%,
+    #f5eaf5 70%,
+    #ffffff 100%
+  );
+}
+.backgroundcolor2 {
+ background: linear-gradient(
+    to bottom right,
+    #ffffff 0%,
+    #f5f0ff 30%,
+    #e9ddff 60%,
+    #d6c2ff 100%
+  );
+}
