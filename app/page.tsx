@@ -1,5 +1,4 @@
 import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
-import { Link } from "lucide-react";
 import Image from "next/image";
 
 const specials = [
@@ -16,11 +15,9 @@ const specials = [
     description: "Lightly battered, crispy fried shrimp with dipping sauce",
   },
 ];
-
 export default function Home() {
   return (
     <main className="text-gray-800">
-      {/* HERO */}
       <Navbar fluid rounded className="backgroundimg">
         <NavbarBrand>
           <img src="/assets/sakura-logo.png" alt="Sakura Logo" width={200} height={200} className="h-30 w-auto" />
@@ -39,7 +36,6 @@ export default function Home() {
         <div className="absolute inset-0">
           <img src="/assets/temp-hero.png" className="lg:w-full lg:h-full bg-gray-300 " />
         </div>
-
         <div className="relative z-20 max-w-6xl md:mx-auto px-4 h-full flex pt-22 md:pt-0 items-center justify-center md:justify-normal">
           <div className="bg-white/75 rounded-2xl shadow-xl p-6 md:p-10 max-w-md">
             <h1 className="text-2xl md:text-4xl font-bold mb-2">
@@ -54,11 +50,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* DAILY SPECIALS */}
-      {/* <Specials></Specials> */}
-
-      {/* PRODUCTS SECTION */}
       <section id="productsSection" className="py-12 backgroundcolor2">
         <div className="px-6 lg:px-12 xl:px-20">
           <div className="">
@@ -70,7 +61,6 @@ export default function Home() {
               authentic Asian flavors and essentials
             </h5>
           </div>
-
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <div>
               <p className="px-2 py-4 text-xl lg:px-10 lg:py-7 lg:text-3xl">
@@ -83,7 +73,6 @@ export default function Home() {
                 customers feel at home.
               </p>
             </div>
-
             <div className="flex justify-center">
               <img
                 className="mx-auto h-auto w-full max-w-[800px] rounded-4xl object-cover"
@@ -92,7 +81,6 @@ export default function Home() {
               />
             </div>
           </div>
-
           <div className="mt-10 lg:mt-14">
             <div className="mb-10 text-center md:text-left">
               <h2 className="text-3xl font-semibold text-[#2f1f4a] lg:text-4xl">
@@ -103,7 +91,6 @@ export default function Home() {
                 curated for everyday meals and new discoveries.
               </p>
             </div>
-
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               <div className="rounded-[28px] border border-[#eadcf8] bg-white/80 p-6 shadow-[0_12px_35px_rgba(124,90,180,0.12)] backdrop-blur lg:p-8">
                 <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#efe4ff]">
@@ -115,11 +102,9 @@ export default function Home() {
                     className="object-contain"
                   />
                 </div>
-
                 <h3 className="mt-5 text-center text-2xl font-semibold text-[#2f1f4a]">
                   Variety
                 </h3>
-
                 <ul className="mt-5 space-y-4 pl-5 text-base leading-7 text-[#5f5178] marker:text-[#a56ae2]">
                   <li>
                     <strong className="text-[#2f1f4a]">
@@ -137,7 +122,6 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
               <div className="rounded-[28px] border border-[#eadcf8] bg-white/80 p-6 shadow-[0_12px_35px_rgba(124,90,180,0.12)] backdrop-blur lg:p-8">
                 <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#efe4ff]">
                   <Image
@@ -148,11 +132,9 @@ export default function Home() {
                     className="object-contain"
                   />
                 </div>
-
                 <h3 className="mt-5 text-center text-2xl font-semibold text-[#2f1f4a]">
                   Ready-To-Eat
                 </h3>
-
                 <ul className="mt-5 space-y-4 pl-5 text-base leading-7 text-[#5f5178] marker:text-[#a56ae2]">
                   <li>
                     <strong className="text-[#2f1f4a]">Fresh Daily Options:</strong>{" "}
@@ -166,7 +148,6 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
               <div className="rounded-[28px] border border-[#eadcf8] bg-white/80 p-6 shadow-[0_12px_35px_rgba(124,90,180,0.12)] backdrop-blur lg:p-8 md:col-span-2 xl:col-span-1">
                 <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#efe4ff]">
                   <Image
@@ -177,11 +158,9 @@ export default function Home() {
                     className="object-contain"
                   />
                 </div>
-
                 <h3 className="mt-5 text-center text-2xl font-semibold text-[#2f1f4a]">
                   Snacks & Treats
                 </h3>
-
                 <ul className="mt-5 space-y-4 pl-5 text-base leading-7 text-[#5f5178] marker:text-[#a56ae2]">
                   <li>
                     <strong className="text-[#2f1f4a]">
@@ -201,9 +180,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* About Us Section */}
       <section id="aboutUsSection" className="w-full pt-1 px-4 md:px-6 lg:px-12 backgroundcolor2">
-        <header className="text-center mt-6 lg:mt-10">
+        <div className="text-center mt-6 lg:mt-10">
           <h1 className="lg:text-5xl text-3xl font-bold mb-3 pt-5">
             About Us
           </h1>
@@ -212,9 +190,7 @@ export default function Home() {
               Stockton's neighborhood hub for authentic Asian flavors, friendly faces, and community connection
             </strong>
           </p>
-        </header>
-
-        {/* Our Story */}
+        </div>
         <div className="grid md:grid-cols-2 gap-6 mt-6 lg:mt-8 items-center lg:ms-20">
           <div className="lg:pb-20">
             <h2 className="lg:text-4xl text-3xl font-semibold mb-2">
@@ -228,7 +204,6 @@ export default function Home() {
               to pantry staples and everyday groceries.
             </p>
           </div>
-
           <div className="flex justify-center">
             <img
               src="/assets/sakura-grocery-storefront.jpg"
@@ -237,16 +212,11 @@ export default function Home() {
             />
           </div>
         </div>
-
-        {/* What We Offer */}
-
-        {/* Vision */}
         <div className="mt-14 grid gap-6 pb-12">
           <div className="mx-auto w-full max-w-5xl rounded-[32px] border border-[#e8daf8] bg-[#2d2142] px-8 py-10 text-center shadow-[0_18px_45px_rgba(83,56,130,0.18)] lg:px-16">
             <h3 className="text-3xl font-semibold text-white lg:text-4xl">
               Our Vision
             </h3>
-
             <p className="mx-auto mt-5 max-w-4xl text-base leading-8 text-white/90 lg:text-lg">
               We envision Sakura Grocery Store as more than just a grocery store, but a
               bridge between communities—a place where people of all backgrounds can
@@ -255,12 +225,10 @@ export default function Home() {
               everyone who walks through our doors.
             </p>
           </div>
-
           <div className="mx-auto w-full max-w-5xl rounded-[32px] border border-[#e8daf8] bg-white/75 px-8 py-10 text-center shadow-[0_18px_45px_rgba(160,130,210,0.12)] backdrop-blur lg:px-16">
             <h3 className="text-3xl font-semibold text-[#2f1f4a] lg:text-4xl">
               Our Commitment to Stockton
             </h3>
-
             <p className="mx-auto mt-5 max-w-4xl text-base leading-8 text-[#5f5178] lg:text-lg">
               We believe in giving back to the community that has welcomed us. That
               means more than stocking favorite foods. It means building genuine
@@ -272,11 +240,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div
-        id="connectWithUsSection"
-        className="w-full backgroundcolor2 px-6 py-20 lg:px-16"
-      >
+      <div id="connectWithUsSection" className="w-full backgroundcolor2 px-6 py-20 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <header className="mb-14 text-center">
             <h2 className="text-5xl font-semibold text-[#2f1f4a]">Visit Us</h2>
@@ -284,7 +248,6 @@ export default function Home() {
               Everything customers need in one place.
             </p>
           </header>
-
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             <article className="rounded-[28px] border border-[#eadcf8] bg-white/80 p-8 shadow-[0_12px_35px_rgba(124,90,180,0.12)] backdrop-blur">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#efe4ff]">
@@ -294,9 +257,7 @@ export default function Home() {
                   alt="contact icon"
                 />
               </div>
-
               <h3 className="text-3xl font-semibold text-[#2f1f4a]">Contact Us</h3>
-
               <div className="mt-6 space-y-4 text-lg leading-8 text-[#5f5178]">
                 <p>(209) 477-3939</p>
                 <p>sakuragroceries@yahoo.com</p>
@@ -307,7 +268,6 @@ export default function Home() {
                 </p>
               </div>
             </article>
-
             <article className="rounded-[28px] border border-[#eadcf8] bg-white/80 p-8 shadow-[0_12px_35px_rgba(124,90,180,0.12)] backdrop-blur">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#efe4ff]">
                 <img
@@ -316,9 +276,7 @@ export default function Home() {
                   alt="clock icon"
                 />
               </div>
-
               <h3 className="text-3xl font-semibold text-[#2f1f4a]">Store Hours</h3>
-
               <div className="mt-6 space-y-4 text-lg leading-8 text-[#5f5178]">
                 <p>
                   <span className="font-bold">Monday - Friday</span>
@@ -337,7 +295,6 @@ export default function Home() {
                 </p>
               </div>
             </article>
-
             <article className="rounded-[28px] border border-[#eadcf8] bg-white/80 p-8 shadow-[0_12px_35px_rgba(124,90,180,0.12)] backdrop-blur md:col-span-2 xl:col-span-1">
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#efe4ff]">
                 <img
@@ -346,9 +303,7 @@ export default function Home() {
                   alt="location icon"
                 />
               </div>
-
               <h3 className="text-3xl font-semibold text-[#2f1f4a]">Location</h3>
-
               <div className="mt-6 space-y-4 text-lg leading-8 text-[#5f5178]">
                 <p>
                   4343 Pacific Ave Suite A4
@@ -361,7 +316,6 @@ export default function Home() {
               </div>
             </article>
           </div>
-
           <div className="mt-14 overflow-hidden bg-white/85 border-6 border-white rounded-2xl">
             <div className="overflow-hidden ">
               <iframe
@@ -373,11 +327,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
       < footer className="w-full bg-gray-900 text-white px-4 md:px-6 lg:px-12 py-4 flex flex-col md:flex-row justify-between items-center" >
         <p>Copyright © 2023 Sakura Groceries</p>
-
         <div className="flex gap-3 mt-3 md:mt-0">
           <a href="https://www.facebook.com/pages/SAKURA-Japanese-groceries-and-gifts/160632486211" target="_blank">
             <img src="/assets/icon-facebook-footer.png" alt="facebook icon" className="h-8" />
