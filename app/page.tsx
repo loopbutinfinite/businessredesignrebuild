@@ -17,7 +17,7 @@ export default function Home() {
             <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#connectWithUsSection">CONTACT</NavbarLink>
           </NavbarCollapse>
       </Navbar>
-      <section id="homeSection" className="relative w-full lg:h-screen lg:h-[60vh] md:h-[29vh] ">
+      <section id="homeSection" className="relative w-full lg:h-[80vh] md:h-[500px] ">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="absolute inset-0">
           <img src="/assets/temp-hero.png" className="lg:w-full lg:h-full bg-gray-300 " />
