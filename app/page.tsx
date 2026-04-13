@@ -1,20 +1,6 @@
 import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import Image from "next/image";
 
-const specials = [
-  {
-    title: "Spicy Tuna Rolls",
-    description: "Spicy tuna, avocado, cucumber roll with spicy mayo",
-  },
-  {
-    title: "Fresh Sushi Assortment",
-    description: "Nigiri and assorted rolls with fresh fish selection",
-  },
-  {
-    title: "Crispy Shrimp Tempura",
-    description: "Lightly battered, crispy fried shrimp with dipping sauce",
-  },
-];
 export default function Home() {
   return (
     <main className="text-gray-800">
