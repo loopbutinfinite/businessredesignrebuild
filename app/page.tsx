@@ -1,4 +1,4 @@
-import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
+import { Card, Carousel, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,14 +8,14 @@ export default function Home() {
         <NavbarBrand>
           <img src="/assets/sakura-logo.png" alt="Sakura Logo" width={200} height={200} className="h-30 w-auto" />
         </NavbarBrand>
-          <NavbarToggle />
-          <NavbarCollapse>
-            <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#homeSection">HOME</NavbarLink>
-            <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#dailySpecialsSection">SPECIALS</NavbarLink>
-            <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#productsSection">PRODUCTS</NavbarLink>
-            <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#aboutUsSection">ABOUT</NavbarLink>
-            <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#connectWithUsSection">CONTACT</NavbarLink>
-          </NavbarCollapse>
+        <NavbarToggle />
+        <NavbarCollapse>
+          <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#homeSection">HOME</NavbarLink>
+          {/* <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#dailySpecialsSection">SPECIALS</NavbarLink> */}
+          <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#productsSection">PRODUCTS</NavbarLink>
+          <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#aboutUsSection">ABOUT</NavbarLink>
+          <NavbarLink className="text-[16px] hover:text-[#8a2be2] text-[#8a2be2] font-bold hover:underline transition-colors" href="#connectWithUsSection">CONTACT</NavbarLink>
+        </NavbarCollapse>
       </Navbar>
       <section id="homeSection" className="relative w-full lg:h-[80vh] md:h-[500px] ">
         <div className="absolute inset-0 bg-black/30 z-10" />
@@ -36,6 +36,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* <section className="backgroundcolor2 py-10">
+        <h1 className="text-5xl text-center mb-10 font-bold">Daily Specials</h1>
+          <div className="flex h-full items-center justify-around bg-gray-400 dark:backgroundcolor2 backgroundcolor2 dark:text-white">
+            <Card
+              className="max-w-sm backgroundcolor2 shadow-md shadow-black"
+              imgAlt="Meaningful alt text for an image that is not purely decorative"
+              imgSrc="/assets/menu-item-6.jpg"
+            >
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+                Onigiri Rice Balls
+              </h5>
+            </Card>
+            <Card
+              className="max-w-sm backgroundcolor2 shadow-md shadow-black"
+              imgAlt="Meaningful alt text for an image that is not purely decorative"
+              imgSrc="/assets/menu-item-2.jpg"
+            >
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+                California Roll
+              </h5>
+            </Card>
+            <Card
+              className="max-w-sm backgroundcolor2 shadow-md shadow-black"
+              imgAlt="Meaningful alt text for an image that is not purely decorative"
+              imgSrc="/assets/menu-item-3.jpg"
+            >
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+                Inari Plate
+              </h5>
+            </Card>
+          </div>
+      </section> */}
       <section id="productsSection" className="py-12 backgroundcolor2">
         <div className="px-6 lg:px-12 xl:px-20">
           <div className="">
